@@ -5,294 +5,575 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Quality Cabinetry Creations Inc. | Custom Cabinets San Diego</title>
+  <meta name="description" content="Custom cabinetry, kitchens, bathroom vanities and built-ins serving the San Diego area. Quality Cabinetry Creations Inc. — call 619-646-8638 for a free estimate.">
+  <meta name="theme-color" content="#17251d">
 
-  <meta name="description" content="Quality Cabinetry Creations Inc. provides custom cabinetry, kitchen remodeling, bathroom vanities and built-ins throughout the San Diego area. Call for a free estimate.">
+  <meta property="og:title" content="Quality Cabinetry Creations Inc.">
+  <meta property="og:description" content="Custom cabinetry and remodeling solutions for the San Diego area.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/luxury-white-kitchen.webp">
 
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    :root{
+      --green:#17251d;
+      --green-2:#24392d;
+      --cream:#f5f1e8;
+      --gold:#c99b58;
+      --text:#1f2521;
+      --muted:#667068;
+      --white:#ffffff;
+      --shadow:0 16px 40px rgba(0,0,0,.12);
+      --radius:18px;
     }
 
-    body {
-      font-family: Arial, sans-serif;
-      color: #222;
-      line-height: 1.6;
-      background: #f7f7f7;
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Arial,Helvetica,sans-serif;
+      color:var(--text);
+      background:#fff;
+      line-height:1.6;
+    }
+    img{max-width:100%;display:block}
+    a{color:inherit}
+    .container{width:min(1160px,92%);margin:auto}
+
+    .topbar{
+      background:#0f1d15;
+      color:#fff;
+      font-size:14px;
+    }
+    .topbar .container{
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      padding:8px 0;
+      flex-wrap:wrap;
     }
 
-    header {
-      background: #17251d;
-      color: white;
-      padding: 22px;
-      text-align: center;
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:rgba(23,37,29,.96);
+      backdrop-filter:blur(10px);
+      color:#fff;
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .nav{
+      min-height:74px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+    }
+    .brand{
+      text-decoration:none;
+      font-weight:800;
+      font-size:21px;
+      line-height:1.1;
+      max-width:390px;
+    }
+    nav{display:flex;gap:22px;align-items:center}
+    nav a{
+      text-decoration:none;
+      font-weight:700;
+      font-size:15px;
+      opacity:.92;
+    }
+    nav a:hover{opacity:1}
+    .nav-call{
+      background:var(--gold);
+      color:#111;
+      padding:11px 16px;
+      border-radius:999px;
     }
 
-    header h1 {
-      font-size: 30px;
+    .hero{
+      min-height:76vh;
+      display:grid;
+      place-items:center;
+      position:relative;
+      color:white;
+      background:
+        linear-gradient(90deg,rgba(11,23,16,.84),rgba(11,23,16,.42)),
+        url('images/luxury-white-kitchen.webp') center/cover no-repeat;
+    }
+    .hero-content{
+      width:min(1160px,92%);
+      padding:85px 0;
+    }
+    .eyebrow{
+      display:inline-block;
+      text-transform:uppercase;
+      letter-spacing:2px;
+      font-weight:800;
+      font-size:13px;
+      color:#f1d6a5;
+      margin-bottom:16px;
+    }
+    .hero h1{
+      font-size:clamp(42px,7vw,76px);
+      line-height:1.02;
+      max-width:820px;
+      margin-bottom:20px;
+    }
+    .hero p{
+      max-width:680px;
+      font-size:clamp(18px,2.4vw,22px);
+      color:#f2f4f2;
+    }
+    .cta-row{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:30px;
+    }
+    .btn{
+      display:inline-block;
+      text-decoration:none;
+      font-weight:800;
+      border-radius:10px;
+      padding:14px 20px;
+      transition:.2s ease;
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn-primary{background:var(--gold);color:#151515}
+    .btn-secondary{
+      background:rgba(255,255,255,.10);
+      color:#fff;
+      border:1px solid rgba(255,255,255,.35);
     }
 
-    header p {
-      margin-top: 5px;
-      color: #ddd;
+    section{padding:78px 0}
+    .section-head{
+      max-width:760px;
+      margin:0 auto 36px;
+      text-align:center;
+    }
+    .section-head h2{
+      font-size:clamp(30px,4vw,44px);
+      line-height:1.1;
+      margin-bottom:12px;
+    }
+    .section-head p{color:var(--muted);font-size:18px}
+
+    .services-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+    }
+    .service-card{
+      background:var(--cream);
+      padding:28px 24px;
+      border-radius:var(--radius);
+    }
+    .service-card span{
+      display:inline-grid;
+      place-items:center;
+      width:46px;height:46px;
+      border-radius:50%;
+      background:var(--green);
+      color:white;
+      font-weight:800;
+      margin-bottom:18px;
+    }
+    .service-card h3{font-size:20px;margin-bottom:8px}
+    .service-card p{color:var(--muted)}
+
+    .portfolio{background:#f7f7f5}
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(12,1fr);
+      grid-auto-rows:210px;
+      gap:14px;
+    }
+    .gallery figure{
+      position:relative;
+      overflow:hidden;
+      border-radius:16px;
+      background:#ddd;
+      box-shadow:0 8px 24px rgba(0,0,0,.07);
+    }
+    .gallery figure:nth-child(1){grid-column:span 8;grid-row:span 2}
+    .gallery figure:nth-child(2){grid-column:span 4;grid-row:span 2}
+    .gallery figure:nth-child(3){grid-column:span 5}
+    .gallery figure:nth-child(4){grid-column:span 7}
+    .gallery figure:nth-child(5){grid-column:span 7}
+    .gallery figure:nth-child(6){grid-column:span 5}
+    .gallery img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:transform .35s ease;
+    }
+    .gallery figure:hover img{transform:scale(1.025)}
+    .gallery figcaption{
+      position:absolute;
+      left:0;right:0;bottom:0;
+      padding:28px 18px 14px;
+      color:white;
+      font-weight:800;
+      background:linear-gradient(transparent,rgba(0,0,0,.65));
     }
 
-    nav {
-      margin-top: 15px;
+    .about-wrap{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:48px;
+      align-items:center;
+    }
+    .about-img{
+      border-radius:var(--radius);
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+    .about-img img{
+      width:100%;
+      height:520px;
+      object-fit:cover;
+    }
+    .about-copy h2{
+      font-size:clamp(32px,4vw,46px);
+      line-height:1.08;
+      margin-bottom:18px;
+    }
+    .about-copy p{color:var(--muted);font-size:18px;margin-bottom:16px}
+    .checks{
+      list-style:none;
+      margin-top:24px;
+      display:grid;
+      gap:10px;
+    }
+    .checks li::before{
+      content:"✓";
+      font-weight:900;
+      color:var(--green);
+      margin-right:10px;
     }
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 10px;
-      font-weight: bold;
+    .process{background:var(--green);color:white}
+    .process .section-head p{color:#cfd7d1}
+    .process-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+    }
+    .process-card{
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.05);
+      border-radius:16px;
+      padding:26px;
+    }
+    .process-card strong{
+      display:block;
+      color:#efcf99;
+      margin-bottom:10px;
+      font-size:14px;
+      letter-spacing:1px;
+    }
+    .process-card h3{margin-bottom:8px}
+    .process-card p{color:#d8ded9}
+
+    .contact{
+      background:var(--cream);
+    }
+    .contact-box{
+      background:white;
+      border-radius:22px;
+      padding:42px;
+      box-shadow:var(--shadow);
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:34px;
+      align-items:center;
+    }
+    .contact-box h2{
+      font-size:clamp(32px,4vw,46px);
+      line-height:1.1;
+      margin-bottom:12px;
+    }
+    .contact-box p{color:var(--muted);font-size:18px}
+    .contact-info{
+      display:grid;
+      gap:12px;
+      font-size:17px;
+    }
+    .contact-info a{
+      color:var(--green);
+      font-weight:800;
+      text-decoration:none;
     }
 
-    .hero {
-      background: linear-gradient(
-        rgba(15,30,20,.82),
-        rgba(15,30,20,.82)
-      );
-      color: white;
-      text-align: center;
-      padding: 85px 20px;
+    footer{
+      background:#0f1d15;
+      color:#d8ded9;
+      padding:28px 0;
+      font-size:14px;
+    }
+    footer .container{
+      display:flex;
+      justify-content:space-between;
+      gap:18px;
+      flex-wrap:wrap;
     }
 
-    .hero h2 {
-      font-size: 42px;
-      margin-bottom: 15px;
+    @media(max-width:900px){
+      .services-grid{grid-template-columns:repeat(2,1fr)}
+      .about-wrap,.contact-box{grid-template-columns:1fr}
+      .process-grid{grid-template-columns:1fr}
+      .about-img img{height:420px}
+      .gallery{grid-auto-rows:180px}
     }
 
-    .hero p {
-      font-size: 20px;
-      max-width: 700px;
-      margin: auto;
-    }
-
-    .buttons {
-      margin-top: 30px;
-    }
-
-    .button {
-      display: inline-block;
-      background: #c49a5a;
-      color: #111;
-      text-decoration: none;
-      padding: 14px 22px;
-      margin: 6px;
-      border-radius: 5px;
-      font-weight: bold;
-    }
-
-    section {
-      max-width: 1000px;
-      margin: auto;
-      padding: 55px 20px;
-    }
-
-    section h2 {
-      text-align: center;
-      margin-bottom: 30px;
-      font-size: 30px;
-    }
-
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-      gap: 20px;
-    }
-
-    .service {
-      background: white;
-      padding: 25px;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0,0,0,.08);
-    }
-
-    .service h3 {
-      color: #294333;
-      margin-bottom: 10px;
-    }
-
-    .about {
-      background: #eee9df;
-      max-width: none;
-    }
-
-    .about-inner {
-      max-width: 900px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .contact {
-      text-align: center;
-    }
-
-    .contact p {
-      margin: 10px 0;
-      font-size: 18px;
-    }
-
-    footer {
-      background: #17251d;
-      color: white;
-      text-align: center;
-      padding: 25px 15px;
-    }
-
-    @media(max-width:600px) {
-      .hero h2 {
-        font-size: 32px;
+    @media(max-width:720px){
+      .topbar .container{justify-content:center;text-align:center}
+      .nav{min-height:68px}
+      .brand{font-size:17px;max-width:240px}
+      nav a:not(.nav-call){display:none}
+      .nav-call{font-size:14px;padding:9px 12px}
+      .hero{min-height:72vh;background-position:62% center}
+      .hero-content{padding:64px 0}
+      section{padding:58px 0}
+      .services-grid{grid-template-columns:1fr}
+      .gallery{
+        grid-template-columns:1fr;
+        grid-auto-rows:280px;
       }
-
-      header h1 {
-        font-size: 24px;
+      .gallery figure,
+      .gallery figure:nth-child(n){
+        grid-column:auto;
+        grid-row:auto;
       }
+      .about-img img{height:360px}
+      .contact-box{padding:28px 22px}
     }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "Quality Cabinetry Creations Inc.",
+    "telephone": "+1-619-646-8638",
+    "email": "qualitycabinetrycreations@gmail.com",
+    "areaServed": "San Diego, California",
+    "description": "Custom cabinetry, kitchen cabinetry, bathroom vanities and built-ins serving the San Diego area.",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "08:00",
+        "closes": "17:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "09:00",
+        "closes": "13:00"
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
 
-<header>
-  <h1>Quality Cabinetry Creations Inc.</h1>
-  <p>Custom Cabinetry • Kitchens • Bathrooms • Built-Ins</p>
-
-  <nav>
-    <a href="#services">Services</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
-
-<div class="hero">
-
-  <h2>Custom Cabinetry Built for Your Home</h2>
-
-  <p>
-    Quality craftsmanship and custom cabinetry for homeowners
-    throughout the San Diego area.
-  </p>
-
-  <div class="buttons">
-
-    <a class="button" href="tel:6196468638">
-      Call 619-646-8638
-    </a>
-
-    <a class="button"
-       href="mailto:qualitycabinetrycreations@gmail.com">
-      Get a Free Estimate
-    </a>
-
-  </div>
-</div>
-
-<section id="services">
-
-  <h2>Our Services</h2>
-
-  <div class="services">
-
-    <div class="service">
-      <h3>Custom Cabinets</h3>
-      <p>
-        Custom cabinetry designed and built to fit your home,
-        style and storage needs.
-      </p>
+  <div class="topbar">
+    <div class="container">
+      <div>Serving the San Diego area</div>
+      <div>Mon–Fri 8:00 AM–5:00 PM · Sat 9:00 AM–1:00 PM</div>
     </div>
-
-    <div class="service">
-      <h3>Kitchen Cabinetry</h3>
-      <p>
-        Transform your kitchen with beautiful, functional
-        cabinetry designed specifically for your space.
-      </p>
-    </div>
-
-    <div class="service">
-      <h3>Bathroom Vanities</h3>
-      <p>
-        Custom bathroom vanities and storage solutions built
-        for both function and appearance.
-      </p>
-    </div>
-
-    <div class="service">
-      <h3>Built-Ins</h3>
-      <p>
-        Entertainment centers, storage cabinets, shelving
-        and other custom built-in cabinetry.
-      </p>
-    </div>
-
   </div>
 
-</section>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top">Quality Cabinetry Creations Inc.</a>
+      <nav aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#portfolio">Our Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-call" href="tel:6196468638">Call 619-646-8638</a>
+      </nav>
+    </div>
+  </header>
 
-<section class="about" id="about">
+  <main id="top">
 
-  <div class="about-inner">
+    <section class="hero">
+      <div class="hero-content">
+        <span class="eyebrow">Custom cabinetry · San Diego</span>
+        <h1>Cabinetry built around your home.</h1>
+        <p>
+          Custom kitchens, bathroom vanities, built-ins and specialty cabinetry
+          designed for function, craftsmanship and a clean finished look.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="tel:6196468638">Call for a Free Estimate</a>
+          <a class="btn btn-secondary" href="mailto:qualitycabinetrycreations@gmail.com?subject=Free%20Estimate%20Request">Email Your Project</a>
+        </div>
+      </div>
+    </section>
 
-    <h2>Quality Cabinetry Creations Inc.</h2>
+    <section id="services">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow" style="color:#866532">What we build</span>
+          <h2>Custom cabinetry for the way you live</h2>
+          <p>From full kitchens to one-of-a-kind built-ins, every project is tailored to the space.</p>
+        </div>
 
-    <p>
-      We provide custom cabinetry and remodeling solutions
-      throughout the San Diego area. Our goal is to create
-      high-quality cabinetry that combines craftsmanship,
-      functionality and great design.
-    </p>
+        <div class="services-grid">
+          <article class="service-card">
+            <span>01</span>
+            <h3>Kitchen Cabinetry</h3>
+            <p>Custom layouts, islands, appliance integration and storage solutions designed around your kitchen.</p>
+          </article>
+          <article class="service-card">
+            <span>02</span>
+            <h3>Bathroom Vanities</h3>
+            <p>Custom vanities and floating cabinetry that combine practical storage with a finished, built-in look.</p>
+          </article>
+          <article class="service-card">
+            <span>03</span>
+            <h3>Built-Ins</h3>
+            <p>Entertainment centers, display walls, shelving, storage cabinets and other architectural built-ins.</p>
+          </article>
+          <article class="service-card">
+            <span>04</span>
+            <h3>Specialty Cabinetry</h3>
+            <p>Contemporary, traditional and fully custom cabinetry for unique spaces and design requirements.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-  </div>
+    <section class="portfolio" id="portfolio">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow" style="color:#866532">Selected projects</span>
+          <h2>See the craftsmanship</h2>
+          <p>A selection of cabinetry and custom installations completed for residential spaces.</p>
+        </div>
 
-</section>
+        <div class="gallery">
+          <figure>
+            <img src="images/luxury-white-kitchen.webp" alt="Luxury white custom kitchen cabinetry" loading="lazy">
+            <figcaption>Luxury White Kitchen</figcaption>
+          </figure>
+          <figure>
+            <img src="images/white-kitchen-black-backsplash.webp" alt="White kitchen cabinets with black backsplash" loading="lazy">
+            <figcaption>White & Black Kitchen</figcaption>
+          </figure>
+          <figure>
+            <img src="images/blue-gray-modern-kitchen.webp" alt="Blue and gray modern custom kitchen cabinetry" loading="lazy">
+            <figcaption>Modern Blue & Gray Kitchen</figcaption>
+          </figure>
+          <figure>
+            <img src="images/curved-modern-kitchen.webp" alt="Curved modern custom kitchen island" loading="lazy">
+            <figcaption>Curved Custom Island</figcaption>
+          </figure>
+          <figure>
+            <img src="images/turquoise-modern-cabinetry.webp" alt="Turquoise contemporary kitchen cabinetry" loading="lazy">
+            <figcaption>Contemporary Color Cabinetry</figcaption>
+          </figure>
+          <figure>
+            <img src="images/illuminated-custom-built-in.webp" alt="Custom illuminated built-in wall with shelves" loading="lazy">
+            <figcaption>Custom Illuminated Built-In</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
 
-<section class="contact" id="contact">
+    <section id="about">
+      <div class="container about-wrap">
+        <div class="about-img">
+          <img src="images/white-traditional-kitchen.webp" alt="Traditional white custom cabinetry" loading="lazy">
+        </div>
+        <div class="about-copy">
+          <span class="eyebrow" style="color:#866532">Quality Cabinetry Creations Inc.</span>
+          <h2>Designed for the space. Built for the home.</h2>
+          <p>
+            We provide custom cabinetry and remodeling solutions throughout the San Diego area,
+            with a focus on clean fit, useful storage and details that make the finished room feel complete.
+          </p>
+          <p>
+            Whether the project calls for modern slab cabinetry, traditional doors,
+            specialty curves or integrated appliance panels, the goal is a result that looks intentional.
+          </p>
+          <ul class="checks">
+            <li>Custom-sized cabinetry</li>
+            <li>Kitchen and bathroom projects</li>
+            <li>Built-ins and specialty installations</li>
+            <li>Serving homeowners throughout the San Diego area</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-  <h2>Request a Free Estimate</h2>
+    <section class="process">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">From idea to installation</span>
+          <h2>A straightforward project process</h2>
+          <p>Start with your space, your goals and the look you want to achieve.</p>
+        </div>
 
-  <p>
-    Ready to discuss your cabinetry project?
-  </p>
+        <div class="process-grid">
+          <article class="process-card">
+            <strong>STEP 01</strong>
+            <h3>Discuss the Project</h3>
+            <p>Tell us what you want to change, what you need to store and the style you have in mind.</p>
+          </article>
+          <article class="process-card">
+            <strong>STEP 02</strong>
+            <h3>Plan the Cabinetry</h3>
+            <p>Cabinet sizes, layout, materials and details are planned around the actual room.</p>
+          </article>
+          <article class="process-card">
+            <strong>STEP 03</strong>
+            <h3>Build & Install</h3>
+            <p>The cabinetry is built and installed with attention to fit, function and the finished appearance.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-  <p>
-    <strong>Phone:</strong>
-    <a href="tel:6196468638">619-646-8638</a>
-  </p>
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="contact-box">
+          <div>
+            <span class="eyebrow" style="color:#866532">Start your project</span>
+            <h2>Request a free estimate</h2>
+            <p>
+              Have a kitchen, vanity or custom cabinetry project in mind?
+              Call or email Quality Cabinetry Creations Inc. to discuss your space.
+            </p>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="tel:6196468638">Call 619-646-8638</a>
+              <a class="btn" style="background:#17251d;color:white" href="mailto:qualitycabinetrycreations@gmail.com?subject=Free%20Estimate%20Request">Email Us</a>
+            </div>
+          </div>
 
-  <p>
-    <strong>Email:</strong>
-    <a href="mailto:qualitycabinetrycreations@gmail.com">
-      qualitycabinetrycreations@gmail.com
-    </a>
-  </p>
+          <div class="contact-info">
+            <div><strong>Phone</strong><br><a href="tel:6196468638">619-646-8638</a></div>
+            <div><strong>Email</strong><br><a href="mailto:qualitycabinetrycreations@gmail.com">qualitycabinetrycreations@gmail.com</a></div>
+            <div><strong>Service Area</strong><br>San Diego Area</div>
+            <div><strong>Hours</strong><br>Mon–Fri: 8 AM–5 PM<br>Sat: 9 AM–1 PM</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <p>
-    <strong>Service Area:</strong> San Diego Area
-  </p>
+  </main>
 
-  <p>
-    <strong>Hours:</strong><br>
-    Monday–Friday: 8:00 AM–5:00 PM<br>
-    Saturday: 9:00 AM–1:00 PM
-  </p>
-
-</section>
-
-<footer>
-
-  <p>
-    © 2026 Quality Cabinetry Creations Inc.
-  </p>
-
-</footer>
+  <footer>
+    <div class="container">
+      <div>© 2026 Quality Cabinetry Creations Inc.</div>
+      <div>Custom Cabinetry · Kitchens · Vanities · Built-Ins · San Diego Area</div>
+    </div>
+  </footer>
 
 </body>
 </html>
-Great. Paste the following entire block into the big white box. It will create the first working version of your website.
-HTML
-After you paste it, don't worry if it looks like a huge amount of code.
-Then press the green “Commit changes…” button at the top.
-When the next box appears, send me a screenshot before pressing anything else. I’ll walk you through the next button.
